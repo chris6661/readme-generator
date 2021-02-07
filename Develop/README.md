@@ -1,8 +1,8 @@
 # Project Title
   
 
-
- ## Table of Contents
+  
+## Table of Contents
  - [Description](#description)
  - [Installation](#installation)
  - [Usage](#usage)
@@ -22,12 +22,16 @@
 
 ## License
  GNU AGPLv3
+ const license = renderLicenseLink('');
  
- ## Contributing
+ 
+## Contributing
  How to contribute
  
- ## Tests
+## Tests
  tests
 
+## Questions
+ If you have any questions about the repo, please open an issue in my GitHub at Chris6661 or email me at .
 
- Generated with ❤️
+ Generated with ❤️ by Chris6661

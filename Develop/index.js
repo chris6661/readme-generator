@@ -5,30 +5,7 @@ const util = require('util');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const writeFileAsync = util.promisify(fs.writeFile);
 // TODO: Create an array of questions for user input
-const questions = [{
-        type: 'input',
-        message: "What is your GitHub username? (no @ required.)",
-        name: 'questions',
-        default: "Chris6661",
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log("A valid GitHub username is required.");
-            }
-            return true;
-        }
-    },
-    {
-        type: 'input',
-        message: "What is the name of your GitHub repo?",
-        name: 'repo',
-        default: "readme-generator",
-        validate: function (answer) {
-            if (answer.length < 1) {
-                return console.log(" A valid GitHub repo is required.");
-            }
-            return true;
-        }
-    },
+const questions = [
     {
         type: 'input',
         message: "What is the title of your project?",
@@ -66,6 +43,12 @@ const questions = [{
         default: 'Usage Example'
     },
     {
+        type: 'list',
+        message: "Choose a license for your project.",
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT'],
+        name: 'license',
+    },
+    {
         type: 'input',
         message: "If applicable, provide guidelines on how other developers can contribute to your project.",
         name: 'contributing',
@@ -78,11 +61,33 @@ const questions = [{
         default: 'tests'
     },
     {
-        type: 'list',
-        message: "Choose a license for your project.",
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
-        name: 'license',
-        default: "#MIT License \n\nCopyright (c) [year] [fullname]\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: \n\n The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. \n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+        type: 'input',
+        message: "What is your GitHub username? (no @ required.)",
+        name: 'userName',
+        default: "Chris6661",
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("A valid GitHub username is required.");
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
+        message: "What is the name of your GitHub repo?",
+        name: 'repo',
+        default: "readme-generator",
+        validate: function (answer) {
+            if (answer.length < 1) {
+                return console.log("A valid GitHub repo is required.");
+            }
+            return true;
+        }
+    },
+    {
+        type: 'input',
+        message: 'Please enter your email address.',
+        name: 'email',
     }
 ];
 
@@ -103,7 +108,7 @@ function init() {
             //was not originally working bc writefileasync was not defined at top, keep eye out
             writeFileAsync('README.md', generateMarkdown(data))
         })
-    
+
 }
 
 // Function call to initialize app
