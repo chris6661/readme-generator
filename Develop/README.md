@@ -1,7 +1,8 @@
-# Project Title
+# README generator using node.js
   
+  MIT
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  
 ## Table of Contents
  - [Description](#description)
  - [Installation](#installation)
@@ -12,26 +13,25 @@
  - [Questions](#questions)
 
 ## Description
- Project description
+ A simple application to develop a README file using node.js when the user enters requested information.
 
 ## Installation
- Installation Steps
+ Install npm and inquirer
 
 ## Usage
- Usage Example
+ none
 
 ## License
- GNU AGPLv3
- const license = renderLicenseLink('');
- 
+ MIT
+ (https://choosealicense.com/licenses/mit/)
  
 ## Contributing
- How to contribute
+ Not necessary, this is already pretty awesome =)
  
 ## Tests
- tests
+ None
 
 ## Questions
- If you have any questions about the repo, please open an issue in my GitHub at Chris6661 or email me at .
+ If you have any questions about the repo, please open an issue in my GitHub at Chris6661 or email me at chrutkay6661@gmail.com.
 
  Generated with ❤️ by Chris6661

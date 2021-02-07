@@ -68,13 +68,13 @@ function renderLicenseSection(license) {
 //data.license is choice, conditionals for what will be rendered return markdown, badges too
 // TODO: Create a function to generate markdown for README
 //callfunction from line 3 on line 23 in {} with $ so ${line 3 function}
-
+//you forgot to actually call the function silly goose, refer to76 and 98
 function generateMarkdown(data) {
   //will include ever qestion answer, refer to exercise 5 from 2/3
   return `# ${data.title}
   
+ ${renderLicenseBadge(data.license)}
 
-  
 ## Table of Contents
  - [Description](#description)
  - [Installation](#installation)
@@ -95,8 +95,7 @@ function generateMarkdown(data) {
 
 ## License
  ${data.license}
- const license = renderLicenseLink('');
- 
+ ${renderLicenseLink(data.license)}
  
 ## Contributing
  ${data.contributing}
