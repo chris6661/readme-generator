@@ -10,7 +10,6 @@ const questions = [
         type: 'input',
         message: "What is the title of your project?",
         name: 'title',
-        default: 'Project Title',
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("A valid project title is required.");
@@ -22,7 +21,6 @@ const questions = [
         type: 'input',
         message: "Write a description of your project.",
         name: 'description',
-        default: 'Project description',
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("A valid project description is required.");
@@ -34,13 +32,11 @@ const questions = [
         type: 'input',
         message: 'What steps are required to install your project?',
         name: 'installation',
-        default: 'Installation Steps'
     },
     {
         type: 'input',
         message: 'Provide instructions and examples of your project in use for the Usage section.',
         name: 'usage',
-        default: 'Usage Example'
     },
     {
         type: 'list',
@@ -52,19 +48,16 @@ const questions = [
         type: 'input',
         message: "If applicable, provide guidelines on how other developers can contribute to your project.",
         name: 'contributing',
-        default: 'How to contribute'
     },
     {
         type: 'input',
         message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
         name: 'tests',
-        default: 'tests'
     },
     {
         type: 'input',
         message: "What is your GitHub username? (no @ required.)",
         name: 'userName',
-        default: "Chris6661",
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("A valid GitHub username is required.");
@@ -76,7 +69,6 @@ const questions = [
         type: 'input',
         message: "What is the name of your GitHub repo?",
         name: 'repo',
-        default: "readme-generator",
         validate: function (answer) {
             if (answer.length < 1) {
                 return console.log("A valid GitHub repo is required.");

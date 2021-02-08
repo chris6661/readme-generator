@@ -72,8 +72,8 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   //will include ever qestion answer, refer to exercise 5 from 2/3
   return `# ${data.title}
-  
- ${renderLicenseBadge(data.license)}
+
+${renderLicenseBadge(data.license)}
 
 ## Table of Contents
  - [Description](#description)
